@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "useDefineForClassFields": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules"]
+}
