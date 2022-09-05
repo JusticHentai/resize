@@ -1,16 +1,17 @@
 {
-  "name": "@justichentai/frame-animation",
-  "version": "1.0.13",
-  "description": "基于 raf 和 canvas 的帧动画工具; raf and canvas based frame animation tools",
+  "name": "@justichentai/resize",
+  "version": "1.0.0",
+  "description": "基于rem的屏幕适配方案; Rem-based adaptation solutions",
   "keywords": [
     "justichentai",
-    "frame",
-    "animation"
+    "resize",
+    "rem",
+    "adaptation"
   ],
-  "homepage": "https://github.com/JusticHentai/frame-animation",
+  "homepage": "https://github.com/JusticHentai/resize",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JusticHentai/frame-animation"
+    "url": "https://github.com/JusticHentai/resize"
   },
   "license": "ISC",
   "author": "justichentai",
@@ -33,6 +34,6 @@
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.31.2",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.2"
   }
 }

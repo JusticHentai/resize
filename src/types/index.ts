@@ -1,44 +1,77 @@
+import Merge from './Merge'
+
 /**
  * 初始化选项
  */
 export interface Options {
-  el: HTMLDivElement // 要挂载的 dom
-  url: string // 帧动画图片 url
-  frame: number // 帧数
-  duration?: number // 持续时间 按 ms 计时
-  column?: number // 帧动画图片 每行的列数 0 表示一行
-  imageLoadComplete?: (url: HTMLImageElement) => any // 图片加载完毕回调
-  frameComplete?: (frame: number) => any // 每帧回调
-  completeOne?: (times: number) => any // 每播完一次回调 times 是当前次数
-  complete?: () => any // 播放次数用完 结束回调
+  resizePreset?: ResizePreset
+  resizeType?: ResizeType
+  resizeCallback?: (options: ResizeCallback) => any
 }
 
 /**
  * 默认选项
  */
 export interface DefaultOptions {
-  duration: number
-  column: number
+  resizePreset: ResizePreset
+  resizeType: ResizeType
 }
+
+/**
+ * 屏幕适配预设
+ * 不同屏幕会有不同的适配标准 不可能平滑过渡
+ * 单位 px
+ * horizontal 横屏
+ * vertical 竖屏
+ * 当只有任意一个时 仅适配当前一个
+ * 当前屏幕是横屏还是竖屏 按 width > height 区分
+ */
+export type ResizePreset =
+  | {
+      horizontal: ScreenInfo
+      vertical: ScreenInfo
+    }
+  | {
+      horizontal: ScreenInfo
+      vertical?: ScreenInfo
+    }
+  | {
+      horizontal?: ScreenInfo
+      vertical: ScreenInfo
+    }
+
+/**
+ * 屏幕信息
+ * width 宽度
+ * height 高度
+ */
+export interface ScreenInfo {
+  width: number
+  height: number
+}
+
+/**
+ * 适配规则
+ * x 表示只按 ResizePreset 的 width 来计算比例适配
+ * y 表示只按 ResizePreset 的 height 来计算比例适配
+ * all 表示 按 width height 两者比例最小值来适配
+ */
+export type ResizeType = 'x' | 'y' | 'all'
+
+/**
+ * 每次 resize 时回调
+ * width 当前屏幕宽度 px
+ * height 当前屏幕高度 px
+ * size 当前屏幕是横屏还是竖屏 按 width > height 区分
+ */
+export type ResizeCallback = {
+  size: 'horizontal' | 'vertical'
+} & ScreenInfo &
+  Options
 
 /**
  * 内部选项
  */
 export type InnerOptions = Merge<Options, DefaultOptions> & {
   [key: string]: any
-}
-
-/**
- * 合并两个 interface
- * 冲突第二个覆盖第一个
- */
-type Merge<
-  Type1 extends { [Key: string]: any },
-  Type2 extends { [Key: string]: any }
-> = {
-  [Key in keyof (Type1 & Type2)]: Key extends keyof Type2
-    ? Type2[Key]
-    : Key extends keyof Type1
-    ? Type1[Key]
-    : never
 }
