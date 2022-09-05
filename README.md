@@ -59,6 +59,7 @@ export type ResizePreset =
 - 适配规则
 - x 表示只按 resizePreset 的 width 与当前屏幕 width 的比例来适配
 - y 表示只按 resizePreset 的 height 与当前屏幕 height 的比例来适配
+- all 表示按 resizePreset 的 width height 与当前屏幕 width height 两者比例最小值来适配
 - 为了让大屏有更好的呈现方式 当 resizePreset 的值小于当前屏幕的对应值 比例默认是 1
 - 如果想自定义大屏 可以按比例提高 resizePreset 的值
 ```ts
