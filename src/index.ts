@@ -16,7 +16,7 @@ const defaults: DefaultOptions = {
   resizeType: 'all',
 }
 
-export default function resize(options: Options) {
+export default function resize(options: Options = {}) {
   const innerOptions: InnerOptions = { ...defaults, ...options }
 
   // 初始化时执行一次
