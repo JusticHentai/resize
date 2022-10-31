@@ -26,6 +26,10 @@ export interface Options {
   resizePreset?: ResizePreset  
   resizeType?: ResizeType  
   resizeCallback?: (options: ResizeCallback) => any  
+  debounce?: {  
+    duration: number  
+    immediate?: boolean  
+  }
 }
 ```
 
@@ -84,6 +88,13 @@ export interface ScreenInfo {
   height: number  
 }
 ```
+
+### Debounce
+
+- 防抖相关参数
+- 默认 不防抖
+- duration 代表延迟多少秒执行
+- immediate 代表是否即刻执行
 
 ## 配套工具
 
