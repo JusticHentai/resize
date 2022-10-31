@@ -7,6 +7,10 @@ export interface Options {
   resizePreset?: ResizePreset
   resizeType?: ResizeType
   resizeCallback?: (options: ResizeCallback) => any
+  debounce?: {
+    duration: number
+    immediate?: boolean
+  }
 }
 
 /**

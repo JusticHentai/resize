@@ -6,12 +6,21 @@ import update from './update'
  * 设置 resize 事件
  */
 export default function setResizeEvent(options: InnerOptions) {
-  const myUpdate = debounce({
-    cb: update,
-    duration: 500,
-  })
+  if (options.debounce) {
+    const { duration, immediate } = options.debounce
 
-  window.addEventListener('resize', () => {
-    myUpdate(options)
-  })
+    const myUpdate = debounce({
+      cb: update,
+      duration,
+      immediate,
+    })
+
+    window.addEventListener('resize', () => {
+      myUpdate(options)
+    })
+  } else {
+    window.addEventListener('resize', () => {
+      update(options)
+    })
+  }
 }
