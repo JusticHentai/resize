@@ -72,6 +72,7 @@ export type ResizeType = 'x' | 'y' | 'all'
  */
 export type ResizeCallback = {
   size: 'horizontal' | 'vertical'
+  ratio: number
 } & ScreenInfo &
   Options
 

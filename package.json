@@ -1,6 +1,6 @@
 {
   "name": "@justichentai/resize",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "基于rem的屏幕适配方案; Rem-based adaptation solutions",
   "keywords": [
     "justichentai",
