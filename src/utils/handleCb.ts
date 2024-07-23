@@ -13,7 +13,6 @@ export default function handleCb(options: InnerOptions & { ratio: number }) {
     size: width >= height ? 'horizontal' : 'vertical',
     width,
     height,
-    ratio,
     ...options,
   })
 }
