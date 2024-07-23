@@ -20,5 +20,5 @@ export default function update(options: InnerOptions) {
   setRemSize(ratio)
 
   // 执行回调函数
-  handleCb(options)
+  handleCb({ ...options, ratio })
 }
