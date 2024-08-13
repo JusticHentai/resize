@@ -1,23 +1,17 @@
 {
   "name": "@justichentai/resize",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "基于rem的屏幕适配方案; Rem-based adaptation solutions",
-  "keywords": [
-    "justichentai",
-    "resize",
-    "rem",
-    "adaptation"
-  ],
-  "homepage": "https://github.com/JusticHentai/resize",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JusticHentai/resize"
-  },
   "license": "ISC",
   "author": "justichentai",
   "type": "module",
-  "main": "dist/my-component.js",
-  "typings": "dist/my-component.d.ts",
+  "main": "dist/utils.js",
+  "types": "dist/utils.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
   "scripts": {
     "build": "rollup -c rollup.config.js",
     "prepublish": "pnpm build"
@@ -26,18 +20,18 @@
     "@justichentai/math": "workspace:*"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.10",
-    "@babel/plugin-transform-runtime": "^7.18.10",
-    "@babel/preset-env": "^7.18.10",
-    "@babel/runtime": "^7.18.9",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-commonjs": "^22.0.1",
-    "@rollup/plugin-node-resolve": "^13.1.3",
-    "core-js": "^3.24.1",
-    "rollup": "^2.77.2",
-    "rollup-plugin-dts": "^4.2.2",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.31.2",
-    "typescript": "^4.8.4"
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-runtime": "^7.24.7",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "core-js": "^3.38.0",
+    "rollup": "^4.20.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "typescript": "^5.5.4"
   }
 }
