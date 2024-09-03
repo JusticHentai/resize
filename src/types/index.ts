@@ -7,6 +7,7 @@ export interface Options {
   resizePreset?: ResizePreset
   resizeType?: ResizeType
   resizeCallback?: (options: ResizeCallback) => any
+  fullScreen?: HTMLElement
   debounce?: {
     duration: number
     immediate?: boolean
